@@ -1,7 +1,6 @@
 var express = require("express");                 // using express library
 var morgan = require('morgan');
 var mongoose = require('mongoose');
-
 var bodyParser = require('body-parser');
 var ejs = require('ejs');
 var engine = require('ejs-mate');
@@ -14,7 +13,6 @@ var favicon = require('serve-favicon');
 
 var passport = require('passport');
 
-var User = require('./models/user');
 
 var app = express(); // Express Object
 
@@ -49,11 +47,17 @@ app.use(session({
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
+
 app.use(function(req,res,next) {
   res.locals.user = req.user;
   next();
 });
 
+
+app.use(function (req, res, next) {
+  res.locals.review = req.review;
+  next();
+});
 
 app.engine('ejs',engine);
 app.set('view engine','ejs');
