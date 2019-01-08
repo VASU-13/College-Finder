@@ -30,7 +30,7 @@ router.get('/signup',function(req,res,next) {
 
 router.post('/signup', function (req, res, next) {
     var user = new User();
-    user.profile.name = req.body.name;
+    user.profile.username = req.body.username;
     user.password = req.body.password;
     user.email = req.body.email;
 

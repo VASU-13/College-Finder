@@ -28,9 +28,6 @@ mongoose.connect(secret.database,{useNewUrlParser:true },function(err) {
 
 //Middleware
 app.use(express.static(__dirname + '/public'));
-
-
-
 app.use(favicon(__dirname + '/public/img/favicon.ico'));
 app.use(morgan('dev'));
 app.use(bodyParser.json());

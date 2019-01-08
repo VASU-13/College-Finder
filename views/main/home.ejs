@@ -1,13 +1,13 @@
 <% layout('layout1') %>
 
-<header class="masthead" style="background-image: url('img/home-bg.jpg')">
+<header class="masthead" style="background-image: url('img/home-bg1.jpg')">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="site-heading">
-                    <h1>Collge Finder</h1>
-                    <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                    <h1>College Finder</h1>
+                    <span class="subheading">Get into your dream college</span>
                 </div>
             </div>
         </div>
@@ -18,38 +18,28 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
+            <% for (var i=0;i < review.length;i++) { %>
             <div class="post-preview">
                     <a>
                     <h2 class="post-title">
-                        <%= review[0].title %>
+                        <a href="#"><%= review[i].rtitle %></a>
                     </h2>
                     </a>
 
                 <p class="post-meta">Posted by
-                    <a href="#"><%= review[0].username %> </a>
-                        on <%= review[0].createdAt %>
+                    <a href="/login"><%= review[i].username %> </a>
+                        on <%= review[i].createdAt.toDateString() %> |
+                            <%= review[i].branch %>
+                            <%= review[i].collegename %>
+                            - Batch of <%= review[i].year %>
+                            
+                            
                 </p>
 
             </div>
 
 
-            <div class="post-preview">
-                <a>
-                    <h2 class="post-title">
-                        <%= review[1].title %>
-                    </h2>
-                </a>
-            
-                <p class="post-meta">Posted by
-                    <a href="#">
-                        <%= review[1].username %> </a>
-                    on
-                    <%= review[1].createdAt %>
-                </p>
-            
-            </div>
-
-          
+                        <% } %>
 
             <hr>
             <!-- Pager -->
@@ -57,6 +47,7 @@
                 <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
             </div>
         </div>
+
     </div>
 </div>
 

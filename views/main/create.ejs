@@ -13,9 +13,21 @@
     </div>
 </header>
 
+
+
+
 <div class="container">
         <div class="row">
                 <div class="col-md-4 offset-md-4">
+                    <% if (message.length > 0) { %>
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismmiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <%= message %>
+                    </div>
+                    <% } %>
+
                     <form method="POST">
 
                         <div class="control-group">
@@ -25,20 +37,34 @@
                             </div>
                         </div>
 
+                        <div class="control-group">
+                            <div class="form-group my-5 floating-label-form-group controls">
+                                <label>College Name</label>
+                                <input type="text" name="collegename" placeholder="College Name" class="form-control">
+                            </div>
+                        </div>
+
 
 
                         <div class="control-group">
                             <div class="form-group my-5 floating-label-form-group controls">
-                                <label>Title</label>
-                                <input type="text" name="title" placeholder="Title" class="form-control">
+                                <label>Review Title</label>
+                                <input type="text" name="rtitle" placeholder="Review Title" class="form-control">
                             </div>
                         </div>
 
 
                         <div class="control-group">
                             <div class="form-group my-5 floating-label-form-group controls">
-                                <label>Description</label>
-                                <input type="text"  name="description" placeholder="Description" class="form-control">
+                                <label>Year</label>
+                                <input type="number"  name="year" placeholder="Year" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <div class="form-group my-5 floating-label-form-group controls">
+                                <label>Branch</label>
+                                <input type="text" name="branch" placeholder="Branch" class="form-control">
                             </div>
                         </div>
 

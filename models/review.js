@@ -5,9 +5,11 @@ var Schema = mongoose.Schema;
 
 var ReviewsSchema = new Schema({
     username: String,
-    title: String,
-    description: String,
+    collegename: String,
+    rtitle: String,
     content: String,
+    year: Number,
+    branch: String,
     createdAt: {
         type: Date,
         default: new Date(),
