@@ -8,7 +8,24 @@
             <a class="navbar-brand" href="#">College Finder</a>
         </div>
 
+        <form class="navbar-form navbar-left" method="post" action="/search">
+            <div class="form-group">
+                <input type="text" name="q" class="form-control" placeholder="Searc...">
+                <button type="submit" class="btn btn">Submit</button>
+            </div>
+        </form>
+
         <ul class="nav navbar-nav navbar-right">
+
+            <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">College List</a>
+                <ul class="dropdown-menu">
+                    <% for (var i = 0;i < college.length; i++) { %>
+                        <li><a href="/collegereviews/<%= college[i].cname %>">
+                                <%= college[i].cname %></a></li>
+                    <% } %>
+                </ul>
+            </li>
+
             <% if (!user) { %>
 
             <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Signup / Login</a>

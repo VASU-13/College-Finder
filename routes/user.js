@@ -4,6 +4,17 @@ var passport = require('passport');
 var passportConf = require('../config/passport');
 
 
+
+
+router.get('/adminlogin',function(req,res) {
+    res.render('accounts/admin');
+
+});
+
+
+
+
+
 router.get('/login',function(req,res) {
     if(req.user) return res.redirect('/');
     res.render('accounts/login', { message: req.flash('loginMessage')});

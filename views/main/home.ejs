@@ -18,20 +18,20 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            <% for (var i=0;i < review.length;i++) { %>
+            <% for (var i=0;i < creviews.length;i++) { %>
             <div class="post-preview">
                     <a>
                     <h2 class="post-title">
-                        <a href="#"><%= review[i].rtitle %></a>
+                        <a href="/:creviews._id"><%= creviews[i].rtitle %></a>
                     </h2>
                     </a>
 
                 <p class="post-meta">Posted by
-                    <a href="/login"><%= review[i].username %> </a>
-                        on <%= review[i].createdAt.toDateString() %> |
-                            <%= review[i].branch %>
-                            <%= review[i].collegename %>
-                            - Batch of <%= review[i].year %>
+                    <a href="/login"><%= creviews[i].username %> </a>
+                        on <%= creviews[i].createdAt.toDateString() %> |
+                            <%= creviews[i].branch %>
+                            <%= creviews[i].collegename %>
+                            - Batch of <%= creviews[i].year %>
                             
                             
                 </p>
